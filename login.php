@@ -23,3 +23,21 @@
 		</form>	
 	</body>
 </html>
+
+<?php
+	
+  $name_error = $emailAddress_error = $password_error = "";
+  $userName = $emailAddress = $password_error = "";
+          
+	if($_SERVER["REQUEST_METHOD"] == "POST"){  
+      $counter = 0;
+    	if(empty($_POST["userName"])){
+        $userName_error = "No username entered"
+      } else{
+        $name = test_input($_POST["userName"])
+        if(!preg_match("/^[a-zA-Z]*$/",$userName)){
+          $userName_error = "Only letter allowed in field"
+        }
+      }
+
+}
